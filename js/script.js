@@ -1,0 +1,109 @@
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Update Copyright Year automatically
+    const copyYearElement = document.getElementById('copy-year');
+    if (copyYearElement) {
+        copyYearElement.textContent = new Date().getFullYear();
+    }
+
+    // 2. Mobile Menu (Hamburger) Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+            
+            // Update accessibility attribute
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Close mobile menu automatically when a link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+
+    // 3. Sticky Header & Back to Top Button on Scroll
+    const header = document.getElementById('site-header');
+    const backToTop = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            if (header) header.classList.add('scrolled');
+            if (backToTop) backToTop.classList.add('visible');
+        } else {
+            if (header) header.classList.remove('scrolled');
+            if (backToTop) backToTop.classList.remove('visible');
+        }
+    });
+
+    // Smooth scroll back to top when button is clicked
+    if (backToTop) {
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // 4. Scroll Reveal Animations
+    // Automatically add the 'reveal' class to important elements
+    const sections = document.querySelectorAll('.section-pad, .hero-content, .stat-card, .about-card, .notice-card, .event-card, .resource-card, .library-card, .teacher-card, .prefect-card');
+    sections.forEach(section => {
+        if(!section.classList.contains('reveal') && !section.classList.contains('reveal-left') && !section.classList.contains('reveal-right')) {
+            section.classList.add('reveal');
+        }
+    });
+
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    
+    if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once revealed
+                }
+            });
+        }, { threshold: 0.1 }); // Triggers when 10% of the element is visible
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    }
+
+    // 5. Number Counters for Statistics (Homepage only)
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    if (statNumbers.length > 0) {
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const endValue = parseInt(target.getAttribute('data-target'));
+                    let startValue = 0;
+                    const duration = 2000; // Animation lasts 2 seconds
+                    const increment = endValue / (duration / 16); 
+
+                    const updateCounter = () => {
+                        startValue += increment;
+                        if (startValue < endValue) {
+                            target.textContent = Math.ceil(startValue);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            target.textContent = endValue;
+                        }
+                    };
+                    
+                    updateCounter();
+                    observer.unobserve(target); // Stop observing once counted
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statNumbers.forEach(stat => statsObserver.observe(stat));
+    }
+});

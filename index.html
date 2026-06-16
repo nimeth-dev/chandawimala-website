@@ -1,98 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daham School | Home</title>
-    <style>
-        /* CSS resets and base styles */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-        
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            padding: 1rem 5%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #d35400; text-decoration: none; }
-        .nav-links { list-style: none; display: flex; gap: 1.5rem; }
-        .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s ease; }
-        .nav-links a:hover { color: #d35400; }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x600?text=Daham+School+Temple') center/cover;
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 0 20px;
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
-        .btn { padding: 10px 20px; background-color: #d35400; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .btn:hover { background-color: #e67e22; }
-
-        /* Notice Board Section */
-        .notices { padding: 4rem 5%; background-color: #f9f9f9; text-align: center; }
-        .notices h2 { margin-bottom: 2rem; color: #2c3e50; }
-        .notice-card { 
-            background: white; 
-            padding: 1.5rem; 
-            margin: 1rem auto; 
-            max-width: 600px; 
-            border-left: 5px solid #d35400; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            text-align: left;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chandawimala Daham Pasala | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+Sinhala:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <a href="index.html" class="logo">Daham School</a>
-        <ul class="nav-links">
+  <!-- NAVIGATION -->
+  <header class="site-header" id="site-header" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand" aria-label="Chandawimala Daham Pasala home">
+        <div class="nav-logo" aria-hidden="true">☸</div>
+        <div class="nav-title">
+          <span class="nav-title-main">Chandawimala Daham Pasala</span>
+          <span class="nav-title-sub">Sri Jayawardhenaramaya</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">About & Staff</a></li>
+        <li><a href="resources.html" class="nav-link">Resources</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-dharma" aria-hidden="true">☸</div>
+        <p class="hero-eyebrow">Sri Jayawardhenaramaya Presents</p>
+        <h1 class="hero-title">Chandawimala<br/><em>Daham Pasala</em></h1>
+        <p class="hero-motto">"ධර්මයෙන් ජිවිතය එළිය කරමු" &nbsp;·&nbsp; Illuminate Life Through Dhamma</p>
+        <div class="hero-actions">
+          <a href="#notices" class="btn btn-primary">View Notices</a>
+          <a href="resources.html" class="btn btn-outline">Explore Resources</a>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">Scroll</span>
+      </div>
+    </section>
+
+    <!-- WELCOME -->
+    <section class="welcome section-pad" id="welcome" aria-labelledby="welcome-heading">
+      <div class="container">
+        <div class="welcome-grid">
+          <div class="welcome-image-wrap">
+            <div class="welcome-image-frame" aria-hidden="true">
+              <img src="https://placehold.co/460x560/6B2E1A/E6A817?text=Principal+Teacher" alt="Principal Teacher" class="welcome-image" loading="lazy" />
+              <div class="welcome-image-badge">
+                <span class="badge-dharma" aria-hidden="true">☸</span>
+                <span>Nayaka Thero</span>
+              </div>
+            </div>
+          </div>
+          <div class="welcome-text">
+            <p class="section-eyebrow">Welcome Message</p>
+            <h2 id="welcome-heading" class="section-title">A Message from the<br/>Principal Teacher</h2>
+            <div class="divider-ornament" aria-hidden="true"><span>❧</span></div>
+            <blockquote class="welcome-quote">
+              "The teachings of the Buddha are not merely words on a page — they are a living path, walked step by step, breath by breath, generation by generation."
+            </blockquote>
+            <p class="welcome-body">With profound reverence and warmth, we welcome you to Chandawimala Daham Pasala, established under the sacred guidance of Sri Jayawardhenaramaya Temple. For decades, our school has nurtured young minds in the timeless wisdom of the Dhamma.</p>
+            <p class="welcome-body">Whether you are a student, a parent, or a devotee, you are part of our sangha. Together, we walk the Noble Eightfold Path toward wisdom, compassion, and peace.</p>
+            <p class="welcome-sig">— Ven. Chandawimala Thero, <em>Principal</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="stats-section" aria-label="School statistics">
+      <div class="container">
+        <ul class="stats-grid" role="list">
+          <li class="stat-card">
+            <div class="stat-icon" aria-hidden="true">🎓</div>
+            <span class="stat-number" data-target="480">0</span>
+            <span class="stat-suffix">+</span>
+            <span class="stat-label">Students</span>
+          </li>
+          <li class="stat-card">
+            <div class="stat-icon" aria-hidden="true">📿</div>
+            <span class="stat-number" data-target="24">0</span>
+            <span class="stat-label">Teachers</span>
+          </li>
+          <li class="stat-card">
+            <div class="stat-icon" aria-hidden="true">🏛️</div>
+            <span class="stat-number" data-target="38">0</span>
+            <span class="stat-label">Years of Service</span>
+          </li>
+          <li class="stat-card">
+            <div class="stat-icon" aria-hidden="true">📚</div>
+            <span class="stat-number" data-target="620">0</span>
+            <span class="stat-suffix">+</span>
+            <span class="stat-label">Learning Resources</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NOTICES -->
+    <section class="notices section-pad" id="notices" aria-labelledby="notices-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Stay Informed</p>
+          <h2 id="notices-heading" class="section-title">Latest Notices</h2>
+        </div>
+        <div class="notices-grid">
+          <article class="notice-card">
+            <div class="notice-date"><span class="notice-day">14</span><span class="notice-month">June 2026</span></div>
+            <div class="notice-body">
+              <span class="notice-tag">Academic</span>
+              <h3>Grade 8 & 9 End-of-Term Examination</h3>
+              <p>All Grade 8 and Grade 9 students are reminded that the End-of-Term Dhamma examination will be held on 28th June. Students should bring their exam tickets.</p>
+              <a href="#" class="notice-read-more">Read More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="notice-card notice-card--featured">
+            <div class="notice-date"><span class="notice-day">08</span><span class="notice-month">June 2026</span></div>
+            <div class="notice-body">
+              <span class="notice-tag notice-tag--important">Important</span>
+              <h3>Poson Poya Day Programme 2026</h3>
+              <p>A special Sil programme and Dhamma lecture series will be conducted on Poson Poya Day. All students, parents, and devotees are warmly invited to participate.</p>
+              <a href="#" class="notice-read-more">Read More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="notice-card">
+            <div class="notice-date"><span class="notice-day">02</span><span class="notice-month">June 2026</span></div>
+            <div class="notice-body">
+              <span class="notice-tag">Enrolment</span>
+              <h3>New Student Registration Now Open</h3>
+              <p>Registration for the 2026 academic year is now open for new students aged 5–17. Please visit the school office with a copy of the birth certificate.</p>
+              <a href="#" class="notice-read-more">Read More <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section class="events section-pad" id="events" aria-labelledby="events-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">Mark Your Calendar</p>
+          <h2 id="events-heading" class="section-title">Upcoming Events</h2>
+        </div>
+        <div class="events-grid">
+          <article class="event-card">
+            <div class="event-image-wrap">
+              <img src="https://placehold.co/540x300/6B2E1A/E6A817?text=Poson+Poya" alt="Poson Poya Ceremony" class="event-image" loading="lazy" />
+              <div class="event-date-badge"><span class="badge-day">28</span><span class="badge-month">Jun</span></div>
+            </div>
+            <div class="event-info">
+              <span class="event-category">Poya Programme</span>
+              <h3>Poson Poya Dhamma Festival</h3>
+              <p>A day of Sil, Dhamma talks, and dana — celebrating the arrival of Buddhism in Sri Lanka.</p>
+              <div class="event-meta"><span>🕔 5:30 AM – 6:00 PM</span><span>📍 Temple Grounds</span></div>
+            </div>
+          </article>
+          <article class="event-card">
+            <div class="event-image-wrap">
+              <img src="https://placehold.co/540x300/2C1810/E6A817?text=Annual+Prize+Day" alt="Prize Giving" class="event-image" loading="lazy" />
+              <div class="event-date-badge"><span class="badge-day">12</span><span class="badge-month">Jul</span></div>
+            </div>
+            <div class="event-info">
+              <span class="event-category">Ceremony</span>
+              <h3>Annual Prize Giving Ceremony</h3>
+              <p>Celebrating academic excellence and Dhamma achievement in the presence of the Maha Sangha.</p>
+              <div class="event-meta"><span>🕔 9:00 AM – 1:00 PM</span><span>📍 School Auditorium</span></div>
+            </div>
+          </article>
+          <article class="event-card">
+            <div class="event-image-wrap">
+              <img src="https://placehold.co/540x300/3D1F0F/E6A817?text=Dhamma+Olympiad" alt="Olympiad" class="event-image" loading="lazy" />
+              <div class="event-date-badge"><span class="badge-day">19</span><span class="badge-month">Jul</span></div>
+            </div>
+            <div class="event-info">
+              <span class="event-category">Competition</span>
+              <h3>Inter-School Dhamma Olympiad</h3>
+              <p>Students compete in chanting, essay writing, and Dhamma quiz. Register before 10th July.</p>
+              <div class="event-meta"><span>🕔 8:00 AM – 4:00 PM</span><span>📍 District Centre</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="container footer-top-grid">
+        <div class="footer-brand">
+          <div class="footer-dharma" aria-hidden="true">☸</div>
+          <h3>Chandawimala Daham Pasala</h3>
+          <p class="footer-tagline">Sri Jayawardhenaramaya Temple<br/>Kelaniya, Sri Lanka</p>
+          <p class="footer-quote">"ධර්මයෙන් ජිවිතය එළිය කරමු"</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">f</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">w</a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Quick Links</h4>
+          <ul role="list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#notices">Notices</a></li>
+            <li><a href="index.html#events">Events</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="resources.html">Resource Hub</a></li>
             <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Nurturing Minds and Morals</h1>
-        <p>Welcome to our Daham School. Guiding the next generation through Dhamma, discipline, and community service.</p>
-        <a href="about.html" class="btn">Learn More About Us</a>
-    </section>
-
-    <!-- Recent Notices -->
-    <section class="notices">
-        <h2>Latest Announcements</h2>
-        <!-- Later, we will use JavaScript to pull these from Google Sheets -->
-        <div class="notice-card">
-            <h3>Poson Poya Program</h3>
-            <p><strong>Date:</strong> June 21, 2026</p>
-            <p>Students are requested to arrive in white attire by 7:30 AM for the Sil campaign.</p>
+          </ul>
         </div>
-        <div class="notice-card">
-            <h3>Term Test Results</h3>
-            <p><strong>Date:</strong> June 10, 2026</p>
-            <p>The marks for the recent term tests have been uploaded to the Resource Hub.</p>
+        <div class="footer-links-col">
+          <h4>Learning</h4>
+          <ul role="list">
+            <li><a href="resources.html">Resource Hub</a></li>
+            <li><a href="resources.html#library">Digital Library</a></li>
+            <li><a href="#">Past Papers</a></li>
+            <li><a href="#">Audio Dhamma</a></li>
+            <li><a href="#">Jataka Stories</a></li>
+          </ul>
         </div>
-    </section>
+        <div class="footer-temple">
+          <h4>Temple Information</h4>
+          <p><strong>Sri Jayawardhenaramaya</strong></p>
+          <p>An ancient temple with a heritage of over 200 years, dedicated to the preservation of the Theravada Buddhist tradition in Sri Lanka.</p>
+          <p class="footer-pali">Namo Tassa Bhagavato Arahato Sammāsambuddhassa</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="copy-year"></span> Chandawimala Daham Pasala. All rights reserved.</p>
+        <p>Designed with <span aria-hidden="true">🙏</span> for the Dhamma</p>
+      </div>
+    </div>
+  </footer>
 
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">☸</button>
+  <script src="script.js"></script>
 </body>
 </html>
