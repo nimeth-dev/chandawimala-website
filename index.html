@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daham School | Home</title>
+    <style>
+        /* CSS resets and base styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #d35400; text-decoration: none; }
+        .nav-links { list-style: none; display: flex; gap: 1.5rem; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #d35400; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x600?text=Daham+School+Temple') center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+        .btn { padding: 10px 20px; background-color: #d35400; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .btn:hover { background-color: #e67e22; }
+
+        /* Notice Board Section */
+        .notices { padding: 4rem 5%; background-color: #f9f9f9; text-align: center; }
+        .notices h2 { margin-bottom: 2rem; color: #2c3e50; }
+        .notice-card { 
+            background: white; 
+            padding: 1.5rem; 
+            margin: 1rem auto; 
+            max-width: 600px; 
+            border-left: 5px solid #d35400; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">Daham School</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="resources.html">Resource Hub</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Nurturing Minds and Morals</h1>
+        <p>Welcome to our Daham School. Guiding the next generation through Dhamma, discipline, and community service.</p>
+        <a href="about.html" class="btn">Learn More About Us</a>
+    </section>
+
+    <!-- Recent Notices -->
+    <section class="notices">
+        <h2>Latest Announcements</h2>
+        <!-- Later, we will use JavaScript to pull these from Google Sheets -->
+        <div class="notice-card">
+            <h3>Poson Poya Program</h3>
+            <p><strong>Date:</strong> June 21, 2026</p>
+            <p>Students are requested to arrive in white attire by 7:30 AM for the Sil campaign.</p>
+        </div>
+        <div class="notice-card">
+            <h3>Term Test Results</h3>
+            <p><strong>Date:</strong> June 10, 2026</p>
+            <p>The marks for the recent term tests have been uploaded to the Resource Hub.</p>
+        </div>
+    </section>
+
+</body>
+</html>
