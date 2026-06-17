@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chandawimala Daham Pasala | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+Sinhala:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+Sinhala:wght@400;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
   <!-- NAVIGATION -->
   <header class="site-header" id="site-header" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
       <a href="index.html" class="nav-brand" aria-label="Chandawimala Daham Pasala home">
-        <div class="nav-logo" aria-hidden="true">☸</div>
+        <img src="assets/images/school-flag.png" alt="School Flag" class="nav-logo-img">
+
         <div class="nav-title">
           <span class="nav-title-main">Chandawimala Daham Pasala</span>
           <span class="nav-title-sub">Sri Jayawardhenaramaya</span>
@@ -24,9 +29,9 @@
       </button>
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="index.html" class="nav-link active">Home</a></li>
-        <li><a href="about.html" class="nav-link">About & Staff</a></li>
         <li><a href="resources.html" class="nav-link">Resources</a></li>
         <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </nav>
@@ -35,23 +40,37 @@
   <main>
     <!-- HERO -->
     <section class="hero" aria-label="Hero">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <!-- NEW SLIDER CONTAINER -->
+      <div class="hero-slider" aria-hidden="true">
+        <!-- Add your image paths in the inline styles below -->
+        <div class="slide active" style="background-image: url('assets/images/chandawimala image homepage bg.jpeg');">
+        </div>
+        <div class="slide" style="background-image: url('assets/images/hero-bg-2.png');"></div>
+        <div class="slide" style="background-image: url('assets/images/hero-bg-3.png');"></div>
+      </div>
+
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-particles" id="hero-particles" aria-hidden="true"></div>
       <div class="hero-content">
         <div class="hero-dharma" aria-hidden="true">☸</div>
-        <p class="hero-eyebrow">Sri Jayawardhenaramaya Presents</p>
-        <h1 class="hero-title">Chandawimala<br/><em>Daham Pasala</em></h1>
-        <p class="hero-motto">"ධර්මයෙන් ජිවිතය එළිය කරමු" &nbsp;·&nbsp; Illuminate Life Through Dhamma</p>
+        <p class="hero-eyebrow">Sri Jayawardhenaramaya </p>
+        <h1 class="hero-title">Chandawimala<br /><em>Dhamma School</em></h1>
+        <p class="hero-motto">"සම්ප්‍රදාය සමතික්‍රමණය කරමු" </p>
         <div class="hero-actions">
-          <a href="#notices" class="btn btn-primary">View Notices</a>
-          <a href="resources.html" class="btn btn-outline">Explore Resources</a>
+          <a href="#notices" class="btn btn-primary">
+            <svg class="btn-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            <span>View Notices</span>
+          </a>
+          <a href="resources.html" class="btn btn-outline">
+            <span>Explore Resources</span>
+            <svg class="btn-icon btn-icon--end" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+          </a>
         </div>
       </div>
-      <div class="hero-scroll" aria-hidden="true">
+      <!-- <div class="hero-scroll" aria-hidden="true">
         <span class="scroll-line"></span>
         <span class="scroll-label">Scroll</span>
-      </div>
+      </div> -->
     </section>
 
     <!-- WELCOME -->
@@ -60,7 +79,8 @@
         <div class="welcome-grid">
           <div class="welcome-image-wrap">
             <div class="welcome-image-frame" aria-hidden="true">
-              <img src="https://placehold.co/460x560/6B2E1A/E6A817?text=Principal+Teacher" alt="Principal Teacher" class="welcome-image" loading="lazy" />
+              <img src="assets/images/principal-chandawimala.JPG" alt="Principal Teacher"
+                class="welcome-image" loading="lazy" />
               <div class="welcome-image-badge">
                 <span class="badge-dharma" aria-hidden="true">☸</span>
                 <span>Nayaka Thero</span>
@@ -69,14 +89,18 @@
           </div>
           <div class="welcome-text">
             <p class="section-eyebrow">Welcome Message</p>
-            <h2 id="welcome-heading" class="section-title">A Message from the<br/>Principal Teacher</h2>
+            <h2 id="welcome-heading" class="section-title">A Message from the<br />Principal Teacher</h2>
             <div class="divider-ornament" aria-hidden="true"><span>❧</span></div>
             <blockquote class="welcome-quote">
-              "The teachings of the Buddha are not merely words on a page — they are a living path, walked step by step, breath by breath, generation by generation."
+              "The teachings of the Buddha are not merely words on a page — they are a living path, walked step by step,
+              breath by breath, generation by generation."
             </blockquote>
-            <p class="welcome-body">With profound reverence and warmth, we welcome you to Chandawimala Daham Pasala, established under the sacred guidance of Sri Jayawardhenaramaya Temple. For decades, our school has nurtured young minds in the timeless wisdom of the Dhamma.</p>
-            <p class="welcome-body">Whether you are a student, a parent, or a devotee, you are part of our sangha. Together, we walk the Noble Eightfold Path toward wisdom, compassion, and peace.</p>
-            <p class="welcome-sig">— Ven. Chandawimala Thero, <em>Principal</em></p>
+            <p class="welcome-body">With profound reverence and warmth, we welcome you to Chandawimala Daham Pasala,
+              established under the sacred guidance of Sri Jayawardhenaramaya Temple. For decades, our school has
+              nurtured young minds in the timeless wisdom of the Dhamma.</p>
+            <p class="welcome-body">Whether you are a student, a parent, or a devotee, you are part of our sangha.
+              Together, we walk the Noble Eightfold Path toward wisdom, compassion, and peace.</p>
+            <p class="welcome-sig">— Ven. Daham Eliya Thero, <em>Principal</em></p>
           </div>
         </div>
       </div>
@@ -87,23 +111,31 @@
       <div class="container">
         <ul class="stats-grid" role="list">
           <li class="stat-card">
-            <div class="stat-icon" aria-hidden="true">🎓</div>
+            <div class="stat-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"></path><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path><path d="M22 10v6"></path></svg>
+            </div>
             <span class="stat-number" data-target="480">0</span>
             <span class="stat-suffix">+</span>
             <span class="stat-label">Students</span>
           </li>
           <li class="stat-card">
-            <div class="stat-icon" aria-hidden="true">📿</div>
+            <div class="stat-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"></circle><circle cx="4.5" cy="7" r="1.6"></circle><circle cx="19.5" cy="7" r="1.6"></circle><circle cx="4.5" cy="17" r="1.6"></circle><circle cx="19.5" cy="17" r="1.6"></circle><circle cx="12" cy="3" r="1.6"></circle><circle cx="12" cy="21" r="1.6"></circle></svg>
+            </div>
             <span class="stat-number" data-target="24">0</span>
             <span class="stat-label">Teachers</span>
           </li>
           <li class="stat-card">
-            <div class="stat-icon" aria-hidden="true">🏛️</div>
+            <div class="stat-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-6 8 6v12"></path><path d="M9 21v-7h6v7"></path><path d="M4 21h16"></path></svg>
+            </div>
             <span class="stat-number" data-target="38">0</span>
             <span class="stat-label">Years of Service</span>
           </li>
           <li class="stat-card">
-            <div class="stat-icon" aria-hidden="true">📚</div>
+            <div class="stat-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path></svg>
+            </div>
             <span class="stat-number" data-target="620">0</span>
             <span class="stat-suffix">+</span>
             <span class="stat-label">Learning Resources</span>
@@ -125,7 +157,8 @@
             <div class="notice-body">
               <span class="notice-tag">Academic</span>
               <h3>Grade 8 & 9 End-of-Term Examination</h3>
-              <p>All Grade 8 and Grade 9 students are reminded that the End-of-Term Dhamma examination will be held on 28th June. Students should bring their exam tickets.</p>
+              <p>All Grade 8 and Grade 9 students are reminded that the End-of-Term Dhamma examination will be held on
+                28th June. Students should bring their exam tickets.</p>
               <a href="#" class="notice-read-more">Read More <span aria-hidden="true">→</span></a>
             </div>
           </article>
@@ -134,7 +167,8 @@
             <div class="notice-body">
               <span class="notice-tag notice-tag--important">Important</span>
               <h3>Poson Poya Day Programme 2026</h3>
-              <p>A special Sil programme and Dhamma lecture series will be conducted on Poson Poya Day. All students, parents, and devotees are warmly invited to participate.</p>
+              <p>A special Sil programme and Dhamma lecture series will be conducted on Poson Poya Day. All students,
+                parents, and devotees are warmly invited to participate.</p>
               <a href="#" class="notice-read-more">Read More <span aria-hidden="true">→</span></a>
             </div>
           </article>
@@ -143,7 +177,8 @@
             <div class="notice-body">
               <span class="notice-tag">Enrolment</span>
               <h3>New Student Registration Now Open</h3>
-              <p>Registration for the 2026 academic year is now open for new students aged 5–17. Please visit the school office with a copy of the birth certificate.</p>
+              <p>Registration for the 2026 academic year is now open for new students aged 5–17. Please visit the school
+                office with a copy of the birth certificate.</p>
               <a href="#" class="notice-read-more">Read More <span aria-hidden="true">→</span></a>
             </div>
           </article>
@@ -161,38 +196,50 @@
         <div class="events-grid">
           <article class="event-card">
             <div class="event-image-wrap">
-              <img src="https://placehold.co/540x300/6B2E1A/E6A817?text=Poson+Poya" alt="Poson Poya Ceremony" class="event-image" loading="lazy" />
+              <img src="https://placehold.co/540x300/6B2E1A/E6A817?text=Poson+Poya" alt="Poson Poya Ceremony"
+                class="event-image" loading="lazy" />
               <div class="event-date-badge"><span class="badge-day">28</span><span class="badge-month">Jun</span></div>
             </div>
             <div class="event-info">
               <span class="event-category">Poya Programme</span>
               <h3>Poson Poya Dhamma Festival</h3>
               <p>A day of Sil, Dhamma talks, and dana — celebrating the arrival of Buddhism in Sri Lanka.</p>
-              <div class="event-meta"><span>🕔 5:30 AM – 6:00 PM</span><span>📍 Temple Grounds</span></div>
+              <div class="event-meta">
+                <span><svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>5:30 AM – 6:00 PM</span>
+                <span><svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 0 0-14 0C5 14.9 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle></svg>Temple Grounds</span>
+              </div>
             </div>
           </article>
           <article class="event-card">
             <div class="event-image-wrap">
-              <img src="https://placehold.co/540x300/2C1810/E6A817?text=Annual+Prize+Day" alt="Prize Giving" class="event-image" loading="lazy" />
+              <img src="https://placehold.co/540x300/2C1810/E6A817?text=Annual+Prize+Day" alt="Prize Giving"
+                class="event-image" loading="lazy" />
               <div class="event-date-badge"><span class="badge-day">12</span><span class="badge-month">Jul</span></div>
             </div>
             <div class="event-info">
               <span class="event-category">Ceremony</span>
               <h3>Annual Prize Giving Ceremony</h3>
               <p>Celebrating academic excellence and Dhamma achievement in the presence of the Maha Sangha.</p>
-              <div class="event-meta"><span>🕔 9:00 AM – 1:00 PM</span><span>📍 School Auditorium</span></div>
+              <div class="event-meta">
+                <span><svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>9:00 AM – 1:00 PM</span>
+                <span><svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 0 0-14 0C5 14.9 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle></svg>School Auditorium</span>
+              </div>
             </div>
           </article>
           <article class="event-card">
             <div class="event-image-wrap">
-              <img src="https://placehold.co/540x300/3D1F0F/E6A817?text=Dhamma+Olympiad" alt="Olympiad" class="event-image" loading="lazy" />
+              <img src="https://placehold.co/540x300/3D1F0F/E6A817?text=Dhamma+Olympiad" alt="Olympiad"
+                class="event-image" loading="lazy" />
               <div class="event-date-badge"><span class="badge-day">19</span><span class="badge-month">Jul</span></div>
             </div>
             <div class="event-info">
               <span class="event-category">Competition</span>
               <h3>Inter-School Dhamma Olympiad</h3>
               <p>Students compete in chanting, essay writing, and Dhamma quiz. Register before 10th July.</p>
-              <div class="event-meta"><span>🕔 8:00 AM – 4:00 PM</span><span>📍 District Centre</span></div>
+              <div class="event-meta">
+                <span><svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>8:00 AM – 4:00 PM</span>
+                <span><svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 0 0-14 0C5 14.9 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.3"></circle></svg>District Centre</span>
+              </div>
             </div>
           </article>
         </div>
@@ -207,10 +254,18 @@
         <div class="footer-brand">
           <div class="footer-dharma" aria-hidden="true">☸</div>
           <h3>Chandawimala Daham Pasala</h3>
-          <p class="footer-tagline">Sri Jayawardhenaramaya Temple<br/>Kelaniya, Sri Lanka</p>
-          <p class="footer-quote">"ධර්මයෙන් ජිවිතය එළිය කරමු"</p>
+          <p class="footer-tagline">Sri Jayawardhenaramaya Temple<br />Delgahamedilla, Sri Lanka</p>
+          <p class="footer-quote">"සම්ප්‍රදාය සමතික්‍රමණය කරමු"</p>
           <div class="footer-social">
-            <a href="#" class="social-link">f</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">w</a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.07C22 6.5 17.52 2 12 2S2 6.5 2 12.07c0 5 3.66 9.15 8.44 9.93v-7.03H7.9v-2.9h2.54V9.84c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22c4.78-.78 8.44-4.93 8.44-9.93Z"></path></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.4-.43-5a3 3 0 0 0-2.1-2.1C18.9 4.5 12 4.5 12 4.5s-6.9 0-8.47.4A3 3 0 0 0 1.43 7C1 8.6 1 12 1 12s0 3.4.43 5a3 3 0 0 0 2.1 2.1c1.57.4 8.47.4 8.47.4s6.9 0 8.47-.4a3 3 0 0 0 2.1-2.1c.43-1.6.43-5 .43-5Z"></path><path d="M9.8 15.3 15.5 12 9.8 8.7Z" fill="var(--white)"></path></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Website">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"></circle><path d="M2.8 12h18.4"></path><path d="M12 2.8c2.4 2.5 3.7 5.8 3.7 9.2S14.4 18.7 12 21.2C9.6 18.7 8.3 15.4 8.3 12S9.6 5.3 12 2.8Z"></path></svg>
+            </a>
           </div>
         </div>
         <div class="footer-links-col">
@@ -236,8 +291,9 @@
         </div>
         <div class="footer-temple">
           <h4>Temple Information</h4>
-          <p><strong>Sri Jayawardhenaramaya</strong></p>
-          <p>An ancient temple with a heritage of over 200 years, dedicated to the preservation of the Theravada Buddhist tradition in Sri Lanka.</p>
+          <p><strong>Sri Jayawardhanaramaya</strong></p>
+          <p>An ancient temple with a heritage of over 200 years, dedicated to the preservation of the Theravada
+            Buddhist tradition in Sri Lanka.</p>
           <p class="footer-pali">Namo Tassa Bhagavato Arahato Sammāsambuddhassa</p>
         </div>
       </div>
@@ -251,6 +307,7 @@
   </footer>
 
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">☸</button>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

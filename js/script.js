@@ -106,4 +106,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         statNumbers.forEach(stat => statsObserver.observe(stat));
     }
+
+    // 6. HERO IMAGE SLIDER (New Section)
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    let currentSlide = 0;
+    const slideInterval = 5000; // Change image every 5 seconds (5000ms)
+
+    if (slides.length > 0) {
+        setInterval(() => {
+            // Remove 'active' class from current slide
+            slides[currentSlide].classList.remove('active');
+            
+            // Move to the next slide, loop back to 0 if at the end
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            // Add 'active' class to the new slide
+            slides[currentSlide].classList.add('active');
+        }, slideInterval);
+    }
 });
