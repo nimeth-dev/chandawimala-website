@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('open');
-            navLinks.classList.toggle('open');
+            navLinks.classList.toggle('active'); // Changed to 'active' to match your CSS
             
             // Update accessibility attribute
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('open');
-                navLinks.classList.remove('open');
+                navLinks.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
             });
         });
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         statNumbers.forEach(stat => statsObserver.observe(stat));
     }
 
-    // 6. HERO IMAGE SLIDER (New Section)
+    // 6. HERO IMAGE SLIDER
     const slides = document.querySelectorAll('.hero-slider .slide');
     let currentSlide = 0;
     const slideInterval = 5000; // Change image every 5 seconds (5000ms)
@@ -124,4 +124,46 @@ document.addEventListener('DOMContentLoaded', () => {
             slides[currentSlide].classList.add('active');
         }, slideInterval);
     }
+
+    // 7. GALLERY IMAGE FILTERING (New Section)
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    if (filterBtns.length > 0 && galleryItems.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove 'active' class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add 'active' class to the clicked button
+                btn.classList.add('active');
+
+                // Get the text of the clicked button (e.g., "All", "Ceremonies")
+                const filterValue = btn.textContent.toLowerCase().trim();
+
+                // Loop through all images to show/hide them
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all') {
+                        item.style.display = 'block'; // Show all
+                    } else {
+                        // Check if the image overlay text matches the button category
+                        const itemText = item.querySelector('.gallery-overlay span').textContent.toLowerCase();
+                        
+                        // Custom matching logic
+                        let isMatch = false;
+                        if (filterValue === 'ceremonies' && (itemText.includes('katina') || itemText.includes('sil'))) {
+                            isMatch = true;
+                        } else if (filterValue === 'classrooms' && itemText.includes('class')) {
+                            isMatch = true;
+                        } else if (itemText.includes(filterValue)) {
+                            isMatch = true;
+                        }
+
+                        // Apply the display property
+                        item.style.display = isMatch ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+    }
+
 });
