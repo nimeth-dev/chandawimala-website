@@ -315,7 +315,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; }
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center 15%;
   background-repeat: no-repeat;
   opacity: 0; /* Hide all slides by default */
   transition: opacity 1.5s ease-in-out, transform 8s linear;
@@ -560,7 +560,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; }
 }
 
 .stats-section::before {
-  content: '☸';
+  content: '\2638\FE0E';
   position: absolute;
   font-size: 28rem;
   color: rgba(30, 58, 95, 0.03);
@@ -1009,7 +1009,7 @@ padding-top: 140px;
 .event-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover ;
   transition: transform var(--transition);
 }
 
@@ -1067,7 +1067,7 @@ padding-top: 140px;
   color: var(--text-mid);
   font-size: 0.88rem;
   line-height: 1.65;
-  margin-bottom: 16px;
+  margin-bottom: 35px; /* Changed from 16px to 0 so the box padding looks balanced */
 }
 
 .event-meta {
@@ -1254,6 +1254,8 @@ padding-top: 140px;
 }
 
 .gallery-item {
+  display: block; /* Added: Forces the link to act like a structural box */
+  text-decoration: none; /* Added: Removes any accidental link underlines */
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
