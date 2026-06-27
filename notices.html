@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noticeboard | Chandawimala Daham Pasala</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Noto+Serif+Sinhala:wght@400;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="site-header" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand" aria-label="Chandawimala Daham Pasala home">
+        <img src="assets/images/school-flag.png" alt="School Flag" class="nav-logo-img">
+        <div class="nav-title">
+          <span class="nav-title-main">Chandawimala Daham Pasala</span>
+          <span class="nav-title-sub">Sri Jayawardhenaramaya</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      
+      
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="notices.html" class="nav-link active">Noticeboard</a></li>
+        <li><a href="resources.html" class="nav-link">Resources</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    
+    <!-- PAGE HEADER -->
+    <section class="section-pad" style="background: #FAFAFA; text-align: center; padding-top: 140px; padding-bottom: 60px;">
+      <div class="container">
+        <p class="section-eyebrow">Stay Informed</p>
+        <h1 class="section-title" style="font-size: 2.8rem;">Official Noticeboard</h1>
+        <p class="section-sub" style="max-width: 600px; margin: 0 auto;">Announcements, student achievements, and academic updates for parents and students.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 1: THE PINBOARD (URGENT NOTICES) -->
+    <section class="notices section-pad" id="notices" aria-labelledby="notices-heading">
+      <div class="container">
+        <div class="notices-grid">
+          
+          <article class="notice-card notice-card--featured">
+            <div class="notice-date"><span class="notice-day">08</span><span class="notice-month">June 2026</span></div>
+            <div class="notice-body">
+              <span class="notice-tag notice-tag--important">Important</span>
+              <h3>Poson Poya Day Programme 2026</h3>
+              <p>A special Sil programme and Dhamma lecture series will be conducted on Poson Poya Day. All students, parents, and devotees are warmly invited to participate.</p>
+            </div>
+          </article>
+          
+          <article class="notice-card">
+            <div class="notice-date"><span class="notice-day">14</span><span class="notice-month">June 2026</span></div>
+            <div class="notice-body">
+              <span class="notice-tag">Academic</span>
+              <h3>Grade 8 & 9 End-of-Term Examination</h3>
+              <p>All Grade 8 and Grade 9 students are reminded that the End-of-Term Dhamma examination will be held on 28th June. Students should bring their exam tickets.</p>
+            </div>
+          </article>
+
+          <article class="notice-card">
+            <div class="notice-date"><span class="notice-day">02</span><span class="notice-month">June 2026</span></div>
+            <div class="notice-body">
+              <span class="notice-tag">Enrolment</span>
+              <h3>New Student Registration Now Open</h3>
+              <p>Registration for the 2026 academic year is now open for new students aged 5–17. Please visit the school office with a copy of the birth certificate.</p>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: HALL OF FAME -->
+    <section class="achievements section-pad" style="background: #FAFAFA;">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <p class="section-eyebrow">Student Excellence</p>
+          <h2 class="section-title">Hall of Fame</h2>
+          <p class="section-sub">Celebrating the outstanding accomplishments of our Dhamma School students.</p>
+        </div>
+        
+        <div class="achievements-grid">
+          
+          <!-- Achievement 1 -->
+          <div class="achievement-card">
+            <img src="https://placehold.co/400x400/eeeeee/aaaaaa?text=Student+Photo" alt="Student" class="achievement-img">
+            <div class="achievement-info">
+              <h4 class="achievement-name">Sanduni Perera</h4>
+              <p class="achievement-award">1st Place - All Island Dhamma Speech</p>
+              <p style="font-size: 0.9rem; color: #666; margin: 0;">Represented the Gampaha district and secured the national championship for 2026.</p>
+            </div>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="achievement-card">
+            <img src="https://placehold.co/400x400/eeeeee/aaaaaa?text=Student+Photo" alt="Student" class="achievement-img">
+            <div class="achievement-info">
+              <h4 class="achievement-name">Kasun Bandara</h4>
+              <p class="achievement-award">Highest Marks - Dharmacharya Exam</p>
+              <p style="font-size: 0.9rem; color: #666; margin: 0;">Achieved the highest aggregate score in the Western Province for the final exams.</p>
+            </div>
+          </div>
+
+          <!-- Achievement 3 -->
+          <div class="achievement-card">
+            <img src="https://placehold.co/400x400/eeeeee/aaaaaa?text=Student+Photo" alt="Student" class="achievement-img">
+            <div class="achievement-info">
+              <h4 class="achievement-name">Grade 10 Debating Team</h4>
+              <p class="achievement-award">Gold Medalists - Sasanarakshaka Balamandalaya</p>
+              <p style="font-size: 0.9rem; color: #666; margin: 0;">Undefeated champions in the regional inter-dhamma school debating tournament.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: EXAM RESULTS (SAFE GOOGLE DRIVE METHOD) -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="exam-results-banner">
+          <h3>Academic Results & Mark Sheets</h3>
+          <p>End-of-term examination results are published securely via Google Drive. Students must use their official Index Numbers to check their results. Personal names are omitted for privacy.</p>
+          
+          <!-- Add your 05_Exam_Results Google Drive folder link here -->
+          <a href="PASTE_YOUR_DRIVE_LINK_HERE" target="_blank" rel="noopener noreferrer" class="btn-white">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Access Mark Sheets Portal
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-bg-image" aria-hidden="true"></div>
+    <div class="footer-bg-overlay" aria-hidden="true"></div>
+    <div class="footer-saffron-line" aria-hidden="true"></div>
+    
+    <div class="footer-content">
+      <div class="footer-top">
+        <div class="container footer-top-grid">
+          
+          <div class="footer-brand">
+            <div class="footer-dharma" aria-hidden="true">&#x2638;&#xFE0E;</div>
+            <h3>Chandawimala Daham Pasala</h3>
+            <p class="footer-tagline">Sri Jayawardhanaramaya Temple<br />Delgahamedilla, Sri Lanka</p>
+            <p class="footer-quote">"සම්ප්‍රදාය සමතික්‍රමණය කරමු"</p>
+          </div>
+
+          <div class="footer-links-col">
+            <h4>Quick Links</h4>
+            <ul role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="notices.html">Noticeboard</a></li>
+              <li><a href="resources.html">Resources</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <div class="footer-contact-row">
+              <div class="footer-contact-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="footer-contact-text">
+                <strong>Address</strong>
+                Delgahamedilla, Sri Lanka
+              </div>
+            </div>
+            <div class="footer-contact-row">
+              <div class="footer-contact-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="footer-contact-text">
+                <strong>Phone</strong>
+                +94 11 291 2345
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>&copy; <span id="copy-year"></span> Chandawimala Daham Pasala. All rights reserved.</p>
+          <p class="footer-heritage">Designed by <strong>IT Division/Chandawimala Daham School</strong></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">&#x25B2;</button>
+  <script src="js/script.js"></script>
+  <script>
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
