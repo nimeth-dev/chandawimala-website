@@ -782,16 +782,33 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; }
   align-items: center;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  position: relative; /* Crucial for the top line animation */
+  overflow: hidden;   /* Keeps the line perfectly inside the rounded corners */
 }
 
+/* This creates the yellow line, hidden by default */
+.form-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px; /* Thickness of the yellow line */
+  background: var(--saffron, #D9822B);
+  transform: scaleX(0); /* Squishes it to 0 width initially */
+  transition: transform 0.3s ease; /* Makes it grow smoothly */
+  transform-origin: center; /* Makes it grow from the middle */
+}
+
+/* When hovering, the card lifts up, gets a shadow, AND the yellow line expands */
 .form-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-  border-color: rgba(217, 130, 43, 0.3); /* Subtle saffron glow on border */
 }
 
+.form-card:hover::after {
+  transform: scaleX(1); /* Expands the yellow line to full width */
+}
 .form-icon-wrapper {
   width: 64px;
   height: 64px;
@@ -1133,6 +1150,7 @@ padding-top: 140px;
 }
 
 /* ---------- RESPONSIVE ---------- */
+
 @media (max-width: 950px) {
   .heritage-block {
     grid-template-columns: 1fr;
@@ -1141,6 +1159,16 @@ padding-top: 140px;
 
   .heritage-photos {
     flex-direction: row;
+    min-height: 400px; 
+    width: 100%;       
+  }
+
+  
+  .heritage-photos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 12px;
   }
 
   .heritage-photos::before {
@@ -2372,12 +2400,21 @@ margin-top: -50px;
   .nav-title-main { font-size: 0.88rem; }
   .back-to-top { bottom: 20px; right: 20px; }
   .welcome-image-badge { right: 12px; bottom: 12px; }
-  .prefect-tier { 
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    width: 100%; 
-    justify-content: center;
+  /* 🔴 BULLETPROOF CENTERING FOR PREFECT CARDS 🔴 */
+  .prefect-tier, 
+  .prefect-tier--senior { 
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center !important; 
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* This forces every individual card inside the tier to center itself */
+  .prefect-tier > * {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 320px; /* Keeps the cards looking nicely proportioned on phones */
   }
 }
 
