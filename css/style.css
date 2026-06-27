@@ -546,6 +546,42 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; }
   font-style: italic;
   font-weight: 400;
 }
+/* ══════════════════════════════════════════
+   WELCOME — Sinhala message typography
+   Additive rules; keep the existing .welcome-quote
+   and .welcome-body rules above, these refine them
+   specifically for Sinhala script (denser glyphs,
+   taller vowel marks need more breathing room).
+══════════════════════════════════════════ */
+
+.welcome-quote--sinhala {
+  font-family: 'Noto Serif Sinhala', serif;
+  font-style: normal;        /* Sinhala has no italic forms; fake-italic looks broken */
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+.welcome-body--sinhala {
+  font-family: 'Noto Serif Sinhala', serif;
+  font-size: 1.02rem;
+  line-height: 1.95;          /* extra room for vowel signs above/below the baseline */
+  letter-spacing: 0.005em;
+  text-align: justify;
+}
+
+/* The section heading also switches to Sinhala here, so give it the
+   matching serif rather than leaving it in Playfair Display (Latin-only) */
+#welcome-heading {
+  font-family: 'Noto Serif Sinhala', serif;
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .welcome-quote--sinhala { font-size: 1.08rem; line-height: 1.75; }
+  .welcome-body--sinhala  { font-size: 0.98rem; line-height: 1.85; text-align: left; }
+}
 
 /* ══════════════════════════════════════════
    STATISTICS
@@ -629,6 +665,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; }
   text-transform: uppercase;
   font-weight: 600;
 }
+
 
 /* ══════════════════════════════════════════
    ABOUT
@@ -2253,55 +2290,99 @@ margin-top: -50px;
   flex-wrap: wrap;
 }
 /* ══════════════════════════════════════════
-   VISION & MISSION (Layout & Typography)
+   VISION & MISSION (Redesigned)
+   Replaces the old .vm-grid / .vm-card rules
 ══════════════════════════════════════════ */
 
-/* 1. The Grid Wrapper (Puts them side-by-side) */
 .vm-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
+  gap: 28px;
   margin: 40px auto;
 }
 
-/* 2. The Box Design */
 .vm-card {
+  position: relative;
   background: var(--white, #ffffff);
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.05);
-  border-top: 5px solid var(--saffron, #D9822B); /* Your golden top line! */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04); /* Soft, premium shadow */
-  
+  border-radius: var(--radius-lg, 16px);
+  border: 1px solid var(--ink-pale, #e8ddd0);
+  box-shadow: var(--shadow-warm, 0 8px 24px rgba(107, 46, 26, 0.12));
+  overflow: hidden;
+  padding: 48px 40px 44px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   text-align: center;
-  padding: 40px 32px;
-  height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .vm-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(107, 46, 26, 0.16);
 }
 
-/* 3. The Typography (Same as before) */
+/* Saffron-to-gold top rule */
+.vm-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--saffron-deep, #b45309), var(--gold, #e6a817), var(--saffron-deep, #b45309));
+}
+
+/* Oversized faded glyph watermark — unique per card via data-glyph attribute,
+   so Vision and Mission read as visually distinct, not duplicated */
+.vm-card::after {
+  content: attr(data-glyph);
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  font-size: 7.5rem;
+  line-height: 1;
+  color: var(--saffron-deep, #b45309);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
 .vm-title {
   font-family: 'Noto Serif Sinhala', serif;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  color: var(--brown-dark, #3D2A1E);
-  margin-bottom: 20px;
+  color: var(--ink-deep, #2c1810);
+  margin: 6px 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.vm-rule {
+  width: 36px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--saffron, #d9822b), var(--gold, #e6a817));
+  margin-bottom: 22px;
 }
 
 .vm-text {
   font-family: 'Noto Serif Sinhala', serif;
-  font-size: 1.05rem; 
+  font-size: 1.05rem;
   font-weight: 500;
-  line-height: 1.7; 
-  color: var(--text-mid, #4A4A4A);
-  max-width: 90%; 
+  line-height: 1.85;
+  color: var(--text-mid, #5a4a3f);
+  max-width: 92%;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Vision card has shorter copy — give it slightly larger text so it
+   doesn't look empty next to Mission's longer paragraph */
+.vm-card--vision .vm-text {
+  font-size: 1.2rem;
+  line-height: 1.9;
+}
+
+@media (max-width: 640px) {
+  .vm-card { padding: 38px 26px 34px; }
+  .vm-title { font-size: 1.4rem; }
+  .vm-card::after { font-size: 5.5rem; }
 }
