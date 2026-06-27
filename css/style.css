@@ -2290,10 +2290,7 @@ margin-top: -50px;
   .contact-grid { grid-template-columns: 1fr; }
 }
 
-/* --- 950px: Small Tablets --- */
 @media (max-width: 950px) {
-  .about-history-elaborate { grid-template-columns: 1fr; gap: 40px; }
-  .history-text p { text-align: left; }
   .professional-cards { grid-template-columns: 1fr; }
   .footer-top-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
   .footer-brand { grid-column: 1 / -1; }
@@ -2375,7 +2372,13 @@ margin-top: -50px;
   .nav-title-main { font-size: 0.88rem; }
   .back-to-top { bottom: 20px; right: 20px; }
   .welcome-image-badge { right: 12px; bottom: 12px; }
-  .prefect-tier { flex-direction: column; align-items: center; }
+  .prefect-tier { 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
+    justify-content: center;
+  }
 }
 
 @media (max-width: 580px) {
